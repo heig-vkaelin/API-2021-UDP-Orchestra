@@ -9,7 +9,7 @@ const INTERVAL = 1000;
 let message;
 const instrumentName = process.argv[2];
 
-if (!protocol.INSTRUMENTS.hasOwnProperty(instrumentName)) {
+if (!instrumentName || !protocol.INSTRUMENTS.hasOwnProperty(instrumentName)) {
   console.log(`Invalid instrument "${instrumentName}"`);
   return;
 }
@@ -24,7 +24,7 @@ function update() {
   const payload = JSON.stringify(payloadData);
 
   message = Buffer.from(payload);
-  socket.send(message, 0, message.length, protocol.PORT, protocol.HOST, (err, bytes) => {
+  socket.send(message, 0, message.length, protocol.PORT, protocol.HOST, () => {
     console.log('Sending payload: ' + payload + ' via port ' + socket.address().port);
   });
 }
