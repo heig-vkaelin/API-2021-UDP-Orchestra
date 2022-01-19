@@ -124,21 +124,21 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | We can use the ``JSON.stringify()`` function.  |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | npm is the official package manager for the Node.js ecosystem.  |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | ``npm install`` will install a specific package and any packages that it depends on. ``--save`` is a flag to specifiy that we want to save the package as a dependency in our ``package.json`` file. It's now the default behavior when we install a package so we can omit it.   |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | We can search for a package name and look at the availables versions for example. We can also check the weekly downloads number to verify if it's a well known package or not.  |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | From Node.js 14.17.0, it's built-in: ``const { randomUUID } = require('crypto'); console.log(randomUUID());`` |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | We can use the ``setInterval()`` function. It takes two parameters. The first one is the function to execute and the second one is the interval in milliseconds.  |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | ``const s = dgram.createSocket('udp4'); s.send(message, start, end, port, address, callback);``  |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | We can access it from ``process.argv``.  |
 
 
 ## Task 3: package the "musician" app in a Docker image
