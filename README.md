@@ -1,4 +1,4 @@
-# Teaching-HEIGVD-RES-2020-Labo-Orchestra
+# Teaching-HEIGVD-API-2022-Labo-Orchestra
 
 ## Admin
 
