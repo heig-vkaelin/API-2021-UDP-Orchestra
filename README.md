@@ -110,13 +110,13 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 | | *Insert your diagram here...* |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | All musicians, every second. |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | The auditor will listen on a specific multicast address and update his state when data is received. |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | His instrument's sound and his unique id. |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | Sender: only some basic variables to store his uuid and the instrument he is playing. Receiver: need a Map of all actives musicians. Each entry will contains the uuid of the musician, the song he played and the timestamp of the last time he was active. Every 5 seconds, the receiver will loop throught this map and remove all inactive musicians.  |
 
 
 ## Task 2: implement a "musician" Node.js application
