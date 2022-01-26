@@ -114,7 +114,7 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | Question | What **payload** should we put in the UDP datagrams?                                                                                                                                                                                                                                                              |
 |          | The musician will send his instrument's sound and his unique id.                                                                                                                                                                                                                                                  |
 | Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures?                                                                                                                                                          |
-|          | Sender: only some basic variables to store his uuid and the soud of the instrument he is playing. Receiver: need a Map of all musicians. Each entry will contains the uuid of the musician, the instrument he played, the timestamp of the first time he played and the timestamp of the last time he was active. |
+|          | Sender: only some basic variables to store his uuid and the soud of the instrument he is playing. Receiver: need a Map of all musicians. Each entry will contain the uuid of the musician, the instrument he played, the timestamp of the first time he played and the timestamp of the last time he was active. |
 
 ## Task 2: implement a "musician" Node.js application
 
@@ -142,17 +142,17 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | #        | Topic                                                                               |
 | -------- | ----------------------------------------------------------------------------------- |
 | Question | How do we **define and build our own Docker image**?                                |
-|          | _Enter your response here..._                                                       |
+|          | We can define an image with a `Dockerfile`. To build it, we can use the command `Docker build -t api/name-of-the-image .` in the directory of the Dockerfile.                                                       |
 | Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?                        |
-|          | _Enter your response here..._                                                       |
+|          | We can use it to pass arguments to the executable in the container directly from the initial `docker run` command.                                                         |
 | Question | After building our Docker image, how do we use it to **run containers**?            |
-|          | _Enter your response here..._                                                       |
+|          | `docker run api/musician name-of-the-instrument`                                                        |
 | Question | How do we get the list of all **running containers**?                               |
-|          | _Enter your response here..._                                                       |
+|          | `docker ps`                                                       |
 | Question | How do we **stop/kill** one running container?                                      |
-|          | _Enter your response here..._                                                       |
+|          | To stop: `docker stop container-id or container-name` To kill: `docker kill container-id or container-name`                                                         |
 | Question | How can we check that our running containers are effectively sending UDP datagrams? |
-|          | _Enter your response here..._                                                       |
+|          | We can run a container (in the same network as the running containers) executing `tcpdump` with a filter for UDP requests. We created a specific Dockerfile for this task in `image-tcpdump`. It also filters UDP request by port.                                                        |
 
 ## Task 4: implement an "auditor" Node.js application
 
