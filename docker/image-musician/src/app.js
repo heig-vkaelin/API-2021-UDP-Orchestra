@@ -14,16 +14,13 @@ if (!instrumentName || !protocol.INSTRUMENTS.hasOwnProperty(instrumentName)) {
   return;
 }
 
-const instrument = protocol.INSTRUMENTS[instrumentName];
+const payload = JSON.stringify({
+  uuid,
+  sound: protocol.INSTRUMENTS[instrumentName],
+});
+message = Buffer.from(payload);
 
 function update() {
-  const payloadData = {
-    uuid,
-    instrument,
-  };
-  const payload = JSON.stringify(payloadData);
-
-  message = Buffer.from(payload);
   socket.send(message, 0, message.length, protocol.PORT, protocol.HOST, () => {
     console.log('Sending payload: ' + payload + ' via port ' + socket.address().port);
   });
